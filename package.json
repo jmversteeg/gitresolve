@@ -1,6 +1,6 @@
 {
   "name": "gitresolve",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Resolve shorthand repository names (github, bitbucket) into their full URLs",
   "license": "MIT",
   "repository": "jmversteeg/gitresolve",
