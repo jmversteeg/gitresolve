@@ -18,8 +18,9 @@ var gitresolve = require('gitresolve');
 gitresolve('jmversteeg/katapult').then(console.log);
 
 //=> [ { service: 'GitHub',
-         url: 'https://github.com/jmversteeg/katapult.git',
-         name: 'katapult' } ]
+//       url: 'https://github.com/jmversteeg/katapult.git',
+//       name: 'katapult' } ]
+
 ```
 
 
