@@ -1,6 +1,6 @@
 # gitresolve [![Build Status](https://travis-ci.org/jmversteeg/gitresolve.svg?branch=master)](https://travis-ci.org/jmversteeg/gitresolve)
 
-> Resolve shorthand repository names into their full URLs
+> Resolve shorthand repository names (github, bitbucket) into their full URLs
 
 
 ## Install
