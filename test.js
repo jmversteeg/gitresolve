@@ -1,20 +1,24 @@
-import test from 'ava';
-import resolve from './';
+'use strict';
 
-test('jmversteeg/katapult is on github', t => {
-	return resolve('jmversteeg/katapult').then(repos => {
-		t.is(repos[0].url, 'https://github.com/jmversteeg/katapult.git');
+const chai           = require('chai');
+const chaiAsPromised = require('chai-as-promised');
+
+chai.use(chaiAsPromised);
+
+chai.should();
+
+const resolve = require('./');
+
+describe('gitresolve', () => {
+	it('should resolve github repositories', () => {
+		return resolve('jmversteeg/katapult')
+			.should.eventually.have.deep.property('0.url').that.equals('https://github.com/jmversteeg/katapult.git');
 	});
-});
-
-test('jmversteeg/public-repo is on bitbucket', t => {
-	return resolve('jmversteeg/public-repo').then(repos => {
-		t.is(repos[0].url, 'git@bitbucket.org:jmversteeg/public-repo.git');
+	it('should resolve bitbucket repositories', () => {
+		return resolve('jmversteeg/public-repo')
+			.should.eventually.have.deep.property('0.url').that.equals('git@bitbucket.org:jmversteeg/public-repo.git')
 	});
-});
-
-test('jmversteeg/cats-and-unicorns does not exist', t => {
-	return resolve('jmversteeg/cats-and-unicorns').then(repos => {
-		t.is(repos.length, 0);
+	it('should fulfill to an empty array for non-existent repositories', () => {
+		return resolve('jmversteeg/unicorns').should.eventually.deep.equal([]);
 	});
 });
