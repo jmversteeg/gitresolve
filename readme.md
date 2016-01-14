@@ -15,24 +15,33 @@ $ npm install --save gitresolve
 ```js
 var gitresolve = require('gitresolve');
 
-gitresolve('jmversteeg/katapult').then(console.log);
+gitresolve('jmversteeg/gitresolve').then(console.log);
 
 //=> [ { service: 'GitHub',
-//       url: 'https://github.com/jmversteeg/katapult.git',
-//       name: 'katapult' } ]
+//       url: 'https://github.com/jmversteeg/gitresolve.git',
+//       name: 'gitresolve' } ]
 
 ```
 
-
 ## API
 
-### gitresolve(shorthand)
+### gitresolve(shorthand, [servicesMask])
 
 #### shorthand
 
 Type: `string`
 
 Shorthand repository name.
+
+Example: `jmversteeg/gitresolve`
+
+#### servicesMask
+
+Type: `string[]`
+
+Array of resolvers to use (by function name). If not provided, all resolvers will be tried. See [lib/services](https://github.com/jmversteeg/gitresolve/tree/master/lib/services) for the available services.
+
+Example: `['github', 'bitbucket']`
 
 ## License
 
