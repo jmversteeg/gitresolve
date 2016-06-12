@@ -27,7 +27,7 @@
     "repo"
   ],
   "dependencies": {
-    "cheerio": "^0.20.0",
+    "cheerio": "^0.21.0",
     "got": "^6.0.0",
     "lodash": "^4.0.0"
   },
